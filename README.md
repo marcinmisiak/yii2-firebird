@@ -10,13 +10,13 @@ The preferred way to install this extension is through [composer](https://getcom
 Either run
 
 ```
-php composer.phar require --prefer-dist firebird/yii2-firebird "*"
+php composer.phar require --prefer-dist marcinmisiak/yii2-firebird "*"
 ```
 
-or add
+or add 
 
 ```
-"firebird/yii2-firebird": "*"
+"marcinmisiak/yii2-firebird": "*"
 ```
 
 to the require section of your `composer.json` file.
