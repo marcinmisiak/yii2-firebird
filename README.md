@@ -1,6 +1,7 @@
 FirebirdSQL
 ===========
 Firebird 3 + php8.1
+forked from edgardmessias/yii2-firebird
 
 Installation
 ------------
@@ -29,3 +30,5 @@ Once the extension is installed, simply use it in your code by  :
 
 ```php
 <?= \marcinmisiak\db\firebird\AutoloadExample::widget(); ?>```
+
+

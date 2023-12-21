@@ -6,7 +6,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace edgardmessias\db\firebird;
+namespace marcinmisiak\db\firebird;
 
 /**
  *

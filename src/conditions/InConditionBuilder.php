@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace edgardmessias\db\firebird\conditions;
+namespace marcinmisiak\db\firebird\conditions;
 
 /**
  * {@inheritdoc}

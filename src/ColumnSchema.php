@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace edgardmessias\db\firebird;
+namespace marcinmisiak\db\firebird;
 
 use yii\db\ExpressionInterface;
 use yii\db\PdoValue;

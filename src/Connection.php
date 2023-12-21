@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace edgardmessias\db\firebird;
+ namespace marcinmisiak\db\firebird;
 
 /**
  *
@@ -23,18 +23,18 @@ class Connection extends \yii\db\Connection
      * @inheritdoc
      */
     public $schemaMap = [
-        'firebird' => 'edgardmessias\db\firebird\Schema', // Firebird
+        'firebird' => 'marcinmisiak\db\firebird\Schema', // Firebird
     ];
 
     /**
      * @inheritdoc
      */
-    public $pdoClass = 'edgardmessias\db\firebird\PdoAdapter';
+    public $pdoClass = 'marcinmisiak\db\firebird\PdoAdapter';
 
     /**
      * @inheritdoc
      */
-    public $commandClass = 'edgardmessias\db\firebird\Command';
+    public $commandClass = 'marcinmisiak\db\firebird\Command';
     /**
      * @var Transaction the currently active transaction
      */
