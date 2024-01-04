@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "marcinmisiak\\db\\firebird\\": ""
+            "marcinmisiak\\db\\firebird\\": "src"
         }
     }
 }
