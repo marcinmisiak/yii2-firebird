@@ -17,5 +17,20 @@
         "psr-4": {
             "marcinmisiak\\db\\firebird\\": "src"
         }
+    },
+    "config": {
+        "platform": {
+            "php": "8.3"
+        },
+        "fxp-asset": {
+            "installer-paths": {
+                "npm-asset-library": "vendor/npm",
+                "bower-asset-library": "vendor/bower"
+            },
+            "vcs-driver-options": {
+                "github-no-api": true
+            },
+            "pattern-skip-version": "(-build|-patch)"
+        }
     }
 }
