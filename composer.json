@@ -4,6 +4,13 @@
     "type": "yii2-extension",
     "keywords": ["yii2","extension","firebird","php81"],
     "license": "GPL-3.0+",
+    "support": {
+        "issues": "https://github.com/edgardmessias/yii2-firebird/issues",
+        "forum": "http://www.yiiframework.com/forum/",
+        "wiki": "http://www.yiiframework.com/wiki/",
+        "irc": "irc://irc.freenode.net/yii",
+        "source": "https://github.com/edgardmessias/yii2-firebird"
+    },
     "authors": [
         {
             "name": "Marcin Misiak",
