@@ -11,7 +11,7 @@ Forked
 
 Forked from edgardmessias/yii2-firebird
 ```html
-[edgardmessias/yii2-firebird]https://github.com/edgardmessias/yii2-firebird
+[edgardmessias/yii2-firebird](https://github.com/edgardmessias/yii2-firebird).
 ```
 
 Requirements
