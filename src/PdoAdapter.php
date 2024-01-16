@@ -48,7 +48,7 @@ class PdoAdapter extends PDO
      * Initiates a transaction
      * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
      */
-    public function beginTransaction($isolationLevel = null)
+    public function beginTransaction($isolationLevel = null) : bool
     {
         $this->setAttribute(PDO::ATTR_AUTOCOMMIT, false);
 
@@ -78,9 +78,9 @@ class PdoAdapter extends PDO
      * Commits a transaction
      * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
      */
-    public function commit()
+    public function commit(): bool
     {
-        $r = $this->exec('COMMIT');
+        $r = $this->exec('commit;');
         $this->setAttribute(PDO::ATTR_AUTOCOMMIT, true);
         $success = ($r !== false);
         if ($success) {
@@ -93,7 +93,7 @@ class PdoAdapter extends PDO
      * Rolls back a transaction
      * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
      */
-    public function rollBack()
+    public function rollBack(): bool
     {
         $r = $this->exec('ROLLBACK');
         $this->setAttribute(PDO::ATTR_AUTOCOMMIT, true);
@@ -108,7 +108,7 @@ class PdoAdapter extends PDO
      * Checks if inside a transaction
      * @return bool <b>TRUE</b> if a transaction is currently active, and <b>FALSE</b> if not.
      */
-    public function inTransaction()
+    public function inTransaction(): bool
     {
         return $this->_inTransaction;
     }

@@ -426,10 +426,19 @@ class Schema extends BaseSchema implements ConstraintFinderInterface
         }
         $pkeys = array_map('rtrim', $pkeys);
         $pkeys = array_map('strtolower', $pkeys);
+       // var_dump($pkeys);
         foreach ($columns as $key => $column) {
-            $column = array_map('strtolower', $column);
-            $columns[$key]['fprimary'] = in_array(rtrim($column['fname']), $pkeys);
+        //   $column = array_map('strtolower', $column);
+        //   $column =  array_change_key_case($column, CASE_LOWER);
+           $fname = rtrim( strtolower($column['fname']));
+         // var_dump( $fname);
+            $columns[$key]['fprimary'] = in_array( $fname, $pkeys);
+            
+          //  var_dump( $columns[$key]['fprimary'] );
+
+         //  exit;
         }
+     //   exit;
         foreach ($columns as $column) {
             $c = $this->loadColumnSchema($column);
             if ($table->sequenceName === null && $c->autoIncrement) {
@@ -457,7 +466,7 @@ class Schema extends BaseSchema implements ConstraintFinderInterface
      */
     protected function createColumnSchema()
     {
-        return \Yii::createObject('\edgardmessias\db\firebird\ColumnSchema');
+        return \Yii::createObject('\marcinmisiak\db\firebird\ColumnSchema');
     }
 
     /**
@@ -472,7 +481,7 @@ class Schema extends BaseSchema implements ConstraintFinderInterface
         $c->name = strtolower(rtrim($column['fname']));
         $c->allowNull = (int) $column['fnull'] !== 1;
         $c->isPrimaryKey = $column['fprimary'];
-        $c->autoIncrement = (isset($column['fgenerator_name']) && $column['fgenerator_name']) || (boolean) $column['fautoinc'];
+        $c->autoIncrement = (isset($column['fgenerator_name']) && $column['fgenerator_name']) || (bool) $column['fautoinc'];
         $c->comment = $column['fcomment'] === null ? '' : $column['fcomment'];
 
         $c->type = self::TYPE_STRING;
@@ -579,8 +588,10 @@ class Schema extends BaseSchema implements ConstraintFinderInterface
 
         $c->defaultValue = null;
         if ($defaultValue !== null) {
-            if (in_array($c->type, [self::TYPE_DATE, self::TYPE_DATETIME, self::TYPE_TIME, self::TYPE_TIMESTAMP])
-                    && preg_match('/(CURRENT_|NOW|NULL|TODAY|TOMORROW|YESTERDAY)/i', $defaultValue)) {
+            if (
+                in_array($c->type, [self::TYPE_DATE, self::TYPE_DATETIME, self::TYPE_TIME, self::TYPE_TIMESTAMP])
+                && preg_match('/(CURRENT_|NOW|NULL|TODAY|TOMORROW|YESTERDAY)/i', $defaultValue)
+            ) {
                 $c->defaultValue = new Expression(trim($defaultValue));
             } else {
                 $c->defaultValue = $c->phpTypecast($defaultValue);
@@ -955,11 +966,11 @@ SQL;
             $columnNames = ArrayHelper::getColumn($constraint, 'column_name');
             $columnNames = array_map('trim', $columnNames);
             $columnNames = array_map('strtolower', $columnNames);
-            
+
             $foreignColumnNames = ArrayHelper::getColumn($constraint, 'foreign_column_name');
             $foreignColumnNames = array_map('trim', $foreignColumnNames);
             $foreignColumnNames = array_map('strtolower', $foreignColumnNames);
-            
+
             $result[] = new ForeignKeyConstraint([
                 'name' => strtolower(trim($name)),
                 'columnNames' => $columnNames,

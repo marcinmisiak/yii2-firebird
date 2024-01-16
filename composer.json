@@ -4,6 +4,7 @@
     "type": "yii2-extension",
     "keywords": ["yii2","extension","firebird","php81"],
     "license": "GPL-3.0+",
+    "minimum-stability": "dev",
     "support": {
         "issues": "https://github.com/edgardmessias/yii2-firebird/issues",
         "forum": "http://www.yiiframework.com/forum/",

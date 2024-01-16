@@ -11,6 +11,7 @@ namespace marcinmisiak\db\firebird;
 use yii\base\InvalidParamException;
 use yii\base\NotSupportedException;
 use yii\db\Expression;
+use yii\db\ExpressionInterface;
 use yii\db\Query;
 
 /**
@@ -63,9 +64,9 @@ class QueryBuilder extends \yii\db\QueryBuilder
     protected function defaultExpressionBuilders()
     {
         return array_merge(parent::defaultExpressionBuilders(), [
-            'yii\db\Expression' => 'edgardmessias\db\firebird\ExpressionBuilder',
-            'yii\db\conditions\InCondition' => 'edgardmessias\db\firebird\conditions\InConditionBuilder',
-            'yii\db\conditions\LikeCondition' => 'edgardmessias\db\firebird\conditions\LikeConditionBuilder',
+            'yii\db\Expression' => 'marcinmisiak\db\firebird\ExpressionBuilder',
+            'yii\db\conditions\InCondition' => 'marcinmisiak\db\firebird\conditions\InConditionBuilder',
+            'yii\db\conditions\LikeCondition' => 'marcinmisiak\db\firebird\conditions\LikeConditionBuilder',
         ]);
     }
 
