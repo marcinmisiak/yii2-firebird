@@ -80,7 +80,7 @@ class PdoAdapter extends PDO
      */
     public function commit(): bool
     {
-        $r = $this->exec('COMMIT');
+        $r = $this->exec('commit;');
         $this->setAttribute(PDO::ATTR_AUTOCOMMIT, true);
         $success = ($r !== false);
         if ($success) {
