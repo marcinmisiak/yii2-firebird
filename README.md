@@ -72,6 +72,11 @@ return [
 ## Donations:
 * Donation is as per your goodwill to support my development.
 * If you are interested in my future developments, i would really appreciate a small donation to support this project.
+* 
+```html
+My revolut acount
+https://revolut.me/marcin1k25
+```
 ```html
 My FWH wallet
 0x70368081c706178dbda7aa444f99ad675a82c24c
