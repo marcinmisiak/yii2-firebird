@@ -48,7 +48,7 @@ class Command extends \yii\db\Command
     public function setSql($sql)
     {
         $matches = null;
-        if (preg_match("/^\s*DROP TABLE IF EXISTS (['\"]?([^\s\;]+)['\"]?);?\s*$/i", $sql, $matches)) {
+         if (preg_match("/^\s*DROP TABLE IF EXISTS (['\"]?([^\s\;]+)['\"]?);?\s*$/i", $sql ?? '', $matches)) {
             if ($this->db->getSchema()->getTableSchema($matches[2]) !== null) {
                 $sql = $this->db->getQueryBuilder()->dropTable($matches[2]);
             } else {
